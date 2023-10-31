@@ -1,16 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_travel_app/core/constants/color_palatte.dart';
-import 'package:flutter_travel_app/core/constants/textstyle_ext.dart';
 import 'package:flutter_travel_app/core/helper/asset_helper.dart';
-import 'package:flutter_travel_app/representation/screens/splash_screen.dart';
 import 'package:flutter_travel_app/representation/widgets/intro_widget.dart';
 import 'package:flutter_travel_app/representation/widgets/item_buttom_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../core/constants/dimension_constants.dart';
-import 'home_sreen.dart';
+import 'main_app.dart';
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});
@@ -93,7 +90,7 @@ class _IntroScreenState extends State<IntroScreen> {
                           child:
                           ItemButtonWidget(title: snapshot.data != 2 ? 'Next' : 'Get Started',onTap:() {
                             if (_pageController.page == 2) {
-                              Navigator.of(context).pushNamed(HomeScreen.routeName);
+                              Navigator.of(context).pushNamed(MainApp.routeName);
                             } else {
                               _pageController.nextPage(duration: const Duration(milliseconds: 200), curve: Curves.easeIn);
                             }
